@@ -28,3 +28,18 @@ Problem: Calculate the sum of all numbers between 1 and 20 (inclusive) that are 
 ```
 total_sum = 0
 ```
+
+#### 5. Sum of a List of Numbers 
+Problem: Calculate the sum of all numbers in a list.
+```
+numbers = [1, 2, 3, 4, 5]
+```
+
+#### 6. Filter Even Numbers
+Problem: Create a new list containing only the even numbers from an existing list using a list comprehension.
+```
+original_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
+
+#### 7. Character Frequency Counter
+Count the frequency of each character in a given string and store the counts in a text = "hello world"
