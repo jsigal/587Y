@@ -4,8 +4,8 @@
 value = -5
 
 if value > 0:
-    print("The number is positive.")
+    print(f"The {value} number is positive.")
 elif value < 0:
-    print("The number is negative.")
+    print(f"The number {value} is negative.")
 else:
-    print("The number is zero.")
+    print(f"The number {value} is zero.")

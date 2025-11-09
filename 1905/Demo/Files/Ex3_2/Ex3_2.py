@@ -17,12 +17,46 @@ city_code_dict = {
     'CUR': 'Curacao Netherland Antilles'}
 
 print('The airport codes')
-for key in city_code_dict:
+for key in city_code_dict.keys():
     print(key)
+# step 2
+# option 1 - lookup
+for key in city_code_dict.keys():
+    print(key, city_code_dict[key])
+# option 2 - sequence unpack
+for key, val in city_code_dict.items():
+    print(key, val)
+# option 3 - lookup via get
+for key in city_code_dict.keys():
+    print(key, city_code_dict.get(key))
+
 
 # Part B
 codelist = ['HNL', 'ITO', 'LHR', 'LGA', 'GCM', 'MSY']
 flightlist = ['HNL', 'HKG', '2022-01-03 16:00', '2022-01-03 20:00', 99.95, 4]
+
+# step 3/4
+are_keys = []
+not_keys = []
+for code in codelist:
+    if code in city_code_dict:
+        are_keys.append(code)
+    else:
+        not_keys.append(code)
+print('are keys in city_code_dict', are_keys)
+print('not keys in city_code_dict', not_keys)
+
+# step 5
+are_keys = [code for code in codelist if code in city_code_dict]
+not_keys = [code for code in codelist if code not in city_code_dict]
+print('are keys in city_code_dict', are_keys)
+print('not keys in city_code_dict', not_keys)
+
+# step 6
+are_keys = list(set(codelist) & set(city_code_dict))
+not_keys = list(set(codelist) - set(city_code_dict))
+print('are keys in city_code_dict', are_keys)
+print('not keys in city_code_dict', not_keys)
 
 # Part C
 flightdict = {

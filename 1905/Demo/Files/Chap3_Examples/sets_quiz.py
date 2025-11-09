@@ -11,9 +11,12 @@ caps = {'France': 'Paris', 'Cuba': 'Havana',
 
 # Create a list of the keys in the codes dictionary
 # that are also keys in the caps dictionary
-
+print(codes.keys())
+print(caps.keys())
+print(set(codes.keys()) & set(caps.keys()))
 # Create a list of the keys in the codes dictionary
 # that are not keys in the caps dictionary
+print(set(codes) - set(caps))
 
 # HINT 1: Use set operators & and -
 # HINT 2: Shortcut, use set operators directly on the keys

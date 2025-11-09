@@ -40,14 +40,25 @@ flightdict = {
     1572: ['HNL', 'HNL', '2022-01-03 09:40', '2022-01-03 16:10', 125.0, 2]}
 
 # Part A
+def list_all_cities():
+    for code, city in city_code_dict.items():
+        print(f'code={code} city={city}')
 
+def flights_per_city(code):
+    for fn, fd in flightdict.items():
+        if code == fd[0]:
+            print(f'flight number {fn} originates in {code}, full details: {fd}')
 
 
 # Part B 
+list_all_cities()
 
 searchcity = 'HNL'
+flights_per_city(searchcity)
 searchcity = 'CUR'
+flights_per_city(searchcity)
 searchcity = 'ITO'
+flights_per_city(searchcity)
 
 departcity = 'NRT'
 arrivecity = 'ITO'

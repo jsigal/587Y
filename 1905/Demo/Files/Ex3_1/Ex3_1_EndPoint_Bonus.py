@@ -69,6 +69,16 @@ else:
     print('codetupe and codelist are not equal value after tupling')
 print(codelist)
 print(codetupe)
+print(type(codelist), type(codetupe))
+if codetupe == tuple(codelist):
+    print('codetupe and codelist are equal value after double tupling')
+else:
+    print('codetupe and codelist are not equal value after double tupling')
+if codetupe[:] == codelist[:]:
+    print('codetupe and codelist are equal value after slice tupling')
+else:
+    print('codetupe and codelist are not equal value after slice tupling')
+print(type(codelist[:]), type(codetupe[:]))
 
 codetupe = tuple(sorted(codetupe, reverse=True))
 print('new codetupe', codetupe)
