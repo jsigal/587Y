@@ -15,3 +15,4 @@ temps2 = ['123.0', '34.0', 'five', '85']
 temps3 = []
 
 print_ftoc(temps1)
+print_ftoc(temps2)
