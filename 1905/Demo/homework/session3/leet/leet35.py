@@ -1,37 +1,33 @@
-# Leet code problem 28 Find the index of First Occurance in a string
-# Given two strings needle and haystack, 
-# return the index of the first occurrence of needle in haystack, 
-# or -1 if needle is not part of haystack.
+# Leet Code Problem 35 Search Insert Position
+# Given a sorted array of distinct integers and a target value, 
+# return the index if the target is found. 
+# If not, return the index where it would be if it were inserted in order.
 
-import re
-
-def strStrFind(haystack, needle):
-    return haystack.find(needle)
-
-def strStrLoop(haystack, needle):
-    ln = len(needle)
-    for i in range(len(haystack)-ln+1):
-        if haystack[i:i+ln] == needle:
-            return i
-    return -1
-
-def strStrRegEx(haystack, needle):
-    match = re.search(needle, haystack)
-    if match:
-        return match.start()
+def searchInsert(nums, target):
+    if target in nums:
+        return nums.index(target)
     else:
-        return -1
+        ret = len(nums)
+        for ix, item in enumerate(nums):
+            if item > target:
+                ret = ix
+                break
+        return ret
 
-strStr = strStrFind
-strStr = strStrLoop
-strStr = strStrRegEx
+nums = [1,3,5,6]
+target = 5
+ret = searchInsert(nums,target)
+print(f'the result is {ret}')
+# Output: 2
 
-haystack = "sadbutsad"
-needle = "sad"
-ret = strStr(haystack, needle)
-print(f'first occurance of {needle} in {haystack} is {ret}')
+nums = [1,3,5,6]
+target = 2
+ret = searchInsert(nums,target)
+print(f'the result is {ret}')
+# Output: 1
 
-haystack = "leetcode"
-needle = "leeto"
-ret = strStr(haystack, needle)
-print(f'first occurance of {needle} in {haystack} is {ret}')
+nums = [1,3,5,6]
+target = 7
+ret = searchInsert(nums,target)
+print(f'the result is {ret}')
+# Output: 4

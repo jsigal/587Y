@@ -12,10 +12,10 @@ def removeElementSlim(nums,val):
 
 def removeElementLoop(nums,val):
     ret = 0
-    for ix in range(len(nums)-1,-1,-1):
-        if nums[ix] == val:
-            nums.pop(ix)
-            ret += 1
+    for ix in range(len(nums)-1,-1,-1): # work the index backwards from end of string
+        if nums[ix] == val: # if the number matches
+            nums.pop(ix) #remove it from the list
+            ret += 1 # increment the count found
     return ret
 
 # removeElement = removeElementSlim
