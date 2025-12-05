@@ -1,3 +1,4 @@
+print('person module loading...')
 class Person:
     def __init__(self, name):
         self.name = name

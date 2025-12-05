@@ -30,7 +30,7 @@ print(e2)
 e3 = EmployeeSimple('Snowball', 201, "Cats")
 print(e3)
 e4 = EmployeeSimple('Garfield', 201, "Cats")
-print(e4)
+print(e4, e4.name)
 
 class EmployeeClassMethod:
     @classmethod
