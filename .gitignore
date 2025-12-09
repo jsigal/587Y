@@ -1,11 +1,24 @@
+# Virtual Environments
 .venv/
 venv/
 env/
+*env/
+
+# Bytecode 
 *.pyc
 __pycache__/
-.vscide/
+
+# Testing cache
+.pytest_cache/
+
+# IDE Settings
+.vscode/
+
+# Temporary files
 *.log
 *.tmp
 *.swp
-.pytest_cache
-*.zip
+*.bak
+
+# Compressed files
+# *.zip
