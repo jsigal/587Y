@@ -1,0 +1,142 @@
+<html>
+<head>
+    <title>Ex 3.2 Hints</title>
+    <link rel="stylesheet" type="text/css" href="../../homepage/css/simple.css">
+</head>
+<body>
+<h2>Hints for Exercise 3.2</h2>
+
+<h3>test_feed_reader.py</h3>
+
+<font color="grey"><pre>
+    def test_fetch_news_items_music(self):
+        # TODO: create a mock RssNewsFeedParser object and assign it to a local
+        # variable named `mock_news_feed_parser` </font><font color="blue">
+        mock_news_feed_parser = Mock(spec=RssNewsFeedParser)
+</pre></font>
+
+
+<font color="grey"><pre>
+        # TODO: set the return value of the mock's get_news() method to the
+        # value of the variable `expected` (defined at the end of the file) </font><font color="blue">
+	mock_news_feed_parser.get_news.return_value = expected
+</pre></font>
+
+
+<font color="grey"><pre>
+	# TODO: create a FeedReader instance and assign it to a local variable
+        # named `feed_reader` </font><font color="blue">
+	feed_reader = FeedReader()
+</pre></font>
+
+
+<font color="grey"><pre>
+	# TODO: set feed_reader.news_feed_parser attribute to
+        # mock_news_feed_parser </font><font color="blue">
+	feed_reader.news_feed_parser = mock_news_feed_parser
+</pre></font>
+
+
+<font color="grey"><pre>
+    def test_fetch_news_items_raise_FeedReaderException(self):
+        # TODO: create a mock RssNewsFeedParser object and assign it to a local
+        # variable named `mock_news_feed_parser` </font><font color="blue">
+        mock_news_feed_parser = Mock(spec=RssNewsFeedParser) </font><font color="grey">
+
+        # TODO: set the `side_effect` attribute of the mock's `get_news` method
+        # so it raises a FeedReaderException when called. </font><font color="blue">
+        mock_news_feed_parser.get_news.side_effect = FeedReaderException() 
+</pre></font>
+
+<font color="grey"><pre>
+	# TODO: create a FeedReader instance and assign it to a local variable
+        # named `feed_reader` </font><font color="blue">
+	feed_reader = FeedReader()
+</pre></font>
+
+
+<font color="grey"><pre>
+	# TODO: set the feed_reader.news_feed_parser attribute to
+        # mock_news_feed_parser </font><font color="blue">
+	feed_reader.news_feed_parser = mock_news_feed_parser
+</pre></font>
+
+
+<font color="grey"><pre>
+	# TODO: call the feed_reader's fetch_news_items() method and save the
+        # return value in a variable named `news`. (Pass any string as the
+        # argument to fetch_news_items()) </font><font color="blue">
+	news = feed_reader.fetch_news_items('quack')
+</pre></font>
+
+
+<font color="grey"><pre>
+	# TODO: assert that the `news` variable is an instance of list.
+        # HINT: use the built-in isinstance() function </font><font color="blue">
+	assert isinstance(news, list)
+</pre></font>
+
+
+<font color="grey"><pre>
+	# TODO: assert that the length of the `news` list is 0 </font><font color="blue">
+	assert 0 == len(news)
+</pre></font>
+
+
+<h2>Hints for Exercise 3.2 Bonus</h2>
+
+<h3>test_user_service.py</h3>
+
+<font color="grey"><pre>
+    # TODO: create a mock DAO  </font><font color="blue">
+    mock_dao = Mock(spec=RssNewsFeedParser)
+</pre></font>
+
+<font color="grey"><pre>
+    # TODO: assign None to the return value of the mock DAO's `get` method  </font><font color="blue">
+    mock_dao.get.return_value = None
+</pre></font>
+
+<font color="grey"><pre>
+    # TODO: create a UserServiceRest instance, passing the mock_dao as
+    #       the third argument  </font><font color="blue">
+    user_service = UserServiceRest(None, request, mock_dao)
+</pre></font>
+
+<font color="grey"><pre>
+    # TODO: add a `with` statement to assert that the nested method call
+    #       raises an HTTPNotFound exception  </font><font color="blue">
+    with raises(HTTPNotFound):
+</pre></font>
+
+<font color="grey"><pre>
+        # TODO: call the UserServiceRest's `get_user` method, passing
+        #       any string as an argument  </font><font color="blue">
+        user_service.get_user('a@b.com')
+</pre></font>
+
+<font color="grey"><pre>
+    # TODO: create a mock DAO  </font><font color="blue">
+    mock_dao = Mock(spec=RssNewsFeedParser)
+</pre></font>
+
+<font color="grey"><pre>
+    # TODO: create a UserServiceRest instance, passing the mock_dao as
+    #       the last argument  </font><font color="blue">
+    user_service = UserServiceRest(None, request, mock_dao)
+</pre></font>
+
+<font color="grey"><pre>
+    # TODO: add a `with` statement to assert that the nested method call
+    #       raises an HTTPNotFound exception  </font><font color="blue">
+    with raises(HTTPNotFound):
+</pre></font>
+
+<font color="grey"><pre>
+        # TODO: call the UserServiceRest's `get_user` method, passing
+        #       any string as an argument  </font><font color="blue">
+        user_service.get_user('a@b.com')
+</pre></font>
+
+</body>
+</html>

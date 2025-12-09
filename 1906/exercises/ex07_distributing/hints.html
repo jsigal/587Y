@@ -1,0 +1,76 @@
+<html>
+<head>
+    <title>Ex 7.1 Hints</title>
+    <link rel="stylesheet" type="text/css" href="../../homepage/css/simple.css">
+</head>
+<body>
+
+<h2>Hints for Exercise 7.1 Bonus</h2>
+
+<h3>tz.py</h3>
+
+<font color="grey"><pre>
+# TODO: add a docstring that describes this module. This string will be
+# displayed when you execute help(tz) from a Python interpreter.</font><font color="blue">
+"""
+Defines a simple wrapper for pytz functions.
+"""
+</pre></font>
+
+<font color="grey"><pre>
+# TODO: set the variable `__author__` to a string with your name. This will 
+# also be displayed by help(tz)</font><font color="blue">
+__author__ = 'Happy Pythonista (hpythonista@python.org)'
+</pre></font>
+
+
+<h3>pyproject.toml</h3>
+
+<font color="grey"><pre>
+# TODO: set name to simple_tz</font><font color="blue">
+name = "simple_tz"</font><font color="grey">
+# TODO: set version to 1.0.0</font><font color="blue">
+version = "1.0.0"</font><font color="grey">
+# TODO: set name and email to your name and email address</font><font color="blue">
+authors = [
+    {name = "Pat Python", email = "pat.python42@gmail.com"},
+]</font><font color="grey">
+# TODO: set description to a string</font><font color="blue">
+description = "Demo of Python project config"</font><font color="grey">
+...
+# TODO: add a dependency on "pytz"</font><font color="blue">
+dependencies = [
+    "pytz"
+]
+</font></pre>
+
+<h2>Hints for Exercise 7.1 Bonus (Building and installing a module)</h2>
+
+Steps 26 and 27:
+
+<font color="blue"><pre>
+set VENV=C:\crs1906\exercises\ex07_distributing\simple_tz\py313venv
+C:\Python\Python3.13\python -m venv %VENV%
+%VENV%\Scripts\activate
+</pre></font>
+
+<h2>Hints for Exercise 7.1 Bonus (Set up a local repository)</h2>
+
+Setup a local Python repository:
+
+<font color="blue"><pre>
+cd \crs1906\exercises\ex07_distributing
+mkdir pypiserver_packages
+copy simple_tz\dist\*.whl pypiserver_packages
+copy simple_tz\dist\*.zip pypiserver_packages
+pypi-server -p 8888 pypiserver_packages
+</pre></font>
+
+Install your module from the local pypiserver:
+
+<font color="blue"><pre>
+pip install --index-url http://localhost:8888 simple_tz
+</pre></font>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<div ng-controller="homeCtrl">
+    <a href="https://github.com/mwoinoski/crs1906">
+      <img loading="lazy" width="149" height="149"
+           src="https://github.blog/wp-content/uploads/2008/12/forkme_right_red_aa0000.png?resize=149%2C149"
+           alt="Fork me on GitHub"
+           style="position: fixed; top: 0; right: 0; border: 0;">
+    </a>
+    <section>
+        <div class="row fx-zoom-up" ng-show="show_content">
+            <div class="col-md-12">
+                <section>    
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <h1 class="header-headings main-heading fx-zoom-up">
+                          Purchase tickets for your event
+                        </h1>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12 pull-center">
+                        <i class="fa fa-chevron-down down-arrow"></i>
+                      </div>
+                    </div>                           
+                </section>
+            </div>
+        </div>
+        <section>
+            <div class="event-pills-row">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 col-xs-12 pull-center pill fx-bounce-left fx-speed-1000" ng-repeat="event in events">
+                        <div class="event-pill" ui-sref="{{event.ui_state}}">
+                            <i class="{{event.icon}} pill-icon"></i>{{event.name}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="copy fx-bounce-left" ng-show="show_copy_right">
+            Copyright <i class="fa fa-copyright"></i> 2025 TicketManor.com. All rights reserved.
+        </div>
+    </section>
+</div>

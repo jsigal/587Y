@@ -1,0 +1,1 @@
+@rem Do nothing if no virtual environment is active
