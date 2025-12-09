@@ -1,0 +1,11 @@
+.venv/
+venv/
+env/
+*.pyc
+__pycache__/
+.vscide/
+*.log
+*.tmp
+*.swp
+.pytest_cache
+*.zip
