@@ -13,12 +13,15 @@ __pycache__/
 
 # IDE Settings
 .vscode/
+.ipynb_checkpoints/
 
 # Temporary files
 *.log
 *.tmp
 *.swp
 *.bak
+*.puml
+*.svg
 
 # Compressed files
 # *.zip
