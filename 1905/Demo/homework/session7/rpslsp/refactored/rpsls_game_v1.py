@@ -5,7 +5,7 @@ Object-oriented implementation supporting 1-4 players with multiple rounds and s
 
 import random
 from typing import List, Optional, Dict
-from abc import ABC, abstractmethod
+from abc import ABC
 
 
 class Move(ABC):
